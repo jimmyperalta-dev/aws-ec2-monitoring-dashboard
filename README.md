@@ -1,8 +1,16 @@
-# 📊 EC2 Monitoring Dashboard on AWS (CloudWatch + SNS)
+## 📊 EC2 Metrics Dashboard
 
-🔗 **Live Monitoring Console:** [AWS CloudWatch Dashboard](https://console.aws.amazon.com/cloudwatch)
+![EC2 CloudWatch Dashboard](architecture/ec2-cloudwatch-dashboard.png)
 
-This project sets up real-time monitoring of a public EC2 instance using Amazon CloudWatch Agent and a custom dashboard. Key system metrics such as CPU, memory, and disk usage are tracked, visualized, and alerted on via SNS notifications. The deployment was completed manually to provide full visibility and control over the setup process.
+This CloudWatch dashboard was created to visualize real-time EC2 system metrics using the CloudWatch Agent.
+
+### 🔍 Metrics Displayed
+
+- **CPU Usage (Idle %)**
+  Tracks available compute capacity to help identify under- or over-utilization.
+
+- **Memory Usage (%)**
+  Indicates current RAM usage to support troubleshooting and capacity planning.
 
 ---
 
@@ -28,11 +36,13 @@ aws-ec2-monitoring-dashboard/
 
 ---
 
-## 🗺️ Architecture Overview
+## 🗺️ Architecture Diagram
 
-📌 *Diagram placeholder (insert in `/architecture/` folder and link below once finalized)*
+![Architecture Diagram](architecture/aws-ec2-monitoring-dashboard-diagram.png)
 
-![Architecture Diagram](architecture/aws-ec2-monitoring-dashboard.png)
+> 📌 **User** → **Route 53** → **CloudFront** → **EC2 Instance** (Ubuntu) → **Amazon CloudWatch Agent** → **CloudWatch Dashboard + Alarms + SNS**  
+> DNS resolution handled via Route 53, enabling HTTPS-secured traffic flow from browser to EC2. CloudWatch Agent runs on the EC2 instance, collects metrics (CPU, memory, disk), and publishes them to CloudWatch for real-time monitoring. Alarms notify via SNS when thresholds are breached.
+
 
 ---
 
