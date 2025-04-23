@@ -112,6 +112,12 @@ aws-ec2-monitoring-dashboard/
 
 ---
 
+## Development Notes
+
+This project was developed with assistance from AI tools like Claude to enhance code quality and documentation. All implementations were validated and tested by the repository owner.
+
+---
+
 ## 👤 Author
 
 **Jimmy Peralta**  
